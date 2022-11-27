@@ -1,0 +1,12 @@
+.listeNotifs {
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.notif {
+    background-color: rgb(156, 223, 156);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+}

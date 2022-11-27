@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-12">
+        <h1>Bienvenue</h1>
+    </div>
+    <div class="col-12">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis cum nobis error. Quisquam esse corporis ad. Accusantium libero minima nostrum id recusandae qui eos? Illum at totam minus corrupti iste?
+    </div>
+</div>
+<app-toast-notification></app-toast-notification>
+<div class="container">
+  <div class="row">
+      <div class="col-4 offset-4 my-5">
+          <form #newTaskForm="ngForm" class="taskcreate-container" (ngSubmit)="add()">
+              <input class="form-control" type="text" [(ngModel)]="dataInput"
+                  [ngModelOptions]="{standalone: true}">
+              <button class="btn btn-primary mx-3">Ajouter</button>
+          </form>
+      </div>
+      <div class="col-10 offset-3">
+        <ul class="list-group">
+            <li class="list-group-item w-50 d-flex justify-content-between" *ngFor="let task of taskList; index as i;" [class]="{'red' : task.isDone === false, 'green' : task.isDone === true}">
+              <app-task-name class="w-100" (selectEvent)="selectTask(task)" [pickedTask]="pickedTask" [task]="task"></app-task-name>
+            </li>
+        </ul>
+          <p class="alert alert-warning" *ngIf="taskList.length === 0">La liste est vide</p>
+      </div>
+  </div>
+</div>

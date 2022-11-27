@@ -1,0 +1,8 @@
+<div style="display: flex; width: 100%;">
+    <p style="flex: 1;" (click)="handleSelectTask()">{{task.name}}</p>
+    <div>
+        <button class="btn btn-primary mx-3" *ngIf="pickedTask === task" (click)="isDone()">Finir</button>
+        <button class="btn-sm btn btn-danger" (click)="deleteTask()">Supprimer</button>
+        <button [routerLink]="['/task', task.id]" class="btn-sm btn btn-danger">Détail</button>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4 my-5">
+            <p *ngIf="objName">Voici le nom {{objName.name}} et son âge moyen est de {{objName.age}} ans</p>
+            <input type="text" [(ngModel)]="dataInput">
+            <button (click)="afficher()">Afficher</button>
+        </div>
+    </div>
+</div>
